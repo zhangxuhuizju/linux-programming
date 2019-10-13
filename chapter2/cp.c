@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 #include <fcntl.h>
 
 #define BUFFERSIZE 4096
@@ -15,6 +16,11 @@ int main(int argc, char const *argv[])
 {
     int in_fd, out_fd, n_chars;
     char buf[BUFFERSIZE+1];
+
+    if (strcmp(argv[1], argv[2]) == 0) {
+        printf("cp: '%s' and '%s' are the same file\n", argv[1], argv[2]);
+        exit(1);
+    }
 
     if (argc != 3) {
         fprintf(stderr, "usage: %s -source -destination\n", *argv);

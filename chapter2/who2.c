@@ -1,5 +1,5 @@
 /**
- * who1.c -- read utmp information and list info
+ * who2.c -- read utmp information and list info
  *         - suppresses empty records
  *         - formats time nicely
  */
